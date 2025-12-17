@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>TaxiApp</title>
+  
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3Ya0X31ET1AguUKET-1W66jqZcf5N5I0"></script>
+  
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #flutter-view {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Debug script -->
+  <script>
+    console.log('=== TaxiApp Loading ===');
+    window.addEventListener('load', function() {
+      console.log('Window loaded, checking Google Maps...');
+      
+      setTimeout(function() {
+        if (typeof google === 'undefined') {
+          console.error('❌ Google not loaded');
+        } else if (typeof google.maps === 'undefined') {
+          console.error('❌ Google Maps not loaded');
+        } else {
+          console.log('✅ SUCCESS: Google Maps loaded!');
+          console.log('Version:', google.maps.version);
+        }
+      }, 1000);
+    });
+  </script>
+  
+  <div id="flutter-view"></div>
+  <script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
